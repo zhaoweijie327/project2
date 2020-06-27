@@ -4,7 +4,7 @@
 '''
 import pytest
 
-from Base.driver import Driver
+from Base.driver import Driver, Data
 from Base.page import Page_Administration
 
 
@@ -17,7 +17,7 @@ class Test_Setting:
         # 关闭驱动
         Driver().driver_close()
 
-    @pytest.mark.parametrize("search_data, exp_data", [("1", "休眠"), ("i", "IP地址"), ("m", "MAC地址")])
+    @pytest.mark.parametrize('search_data,exp_data',Data.path_file('settin.yaml'))
     def test_setting_01(self,search_data,exp_data):
 
         # 点击设置页面的搜索

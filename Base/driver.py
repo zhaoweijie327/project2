@@ -38,12 +38,13 @@ class Data:
     def path_file(cls,filepath):
         '''读数据'''
         data_list = []
-        with open(filepath,'r',encoding='utf-8') as file:
+        with open("./data" + os.sep + filepath ,'r',encoding='utf-8') as file:
             # 使用yaml加载数据
             data = yaml.safe_load(file)
             for i in data.values():
                 data_list.append(tuple(i.values()))
-
+        print(data_list)
         return data_list
 
-BAR_LUJING = os.path.abspath(os.path.dirname(__file__))
+
+# BAR_LUJING = os.path.abspath(os.path.dirname(__file__))
